@@ -262,7 +262,7 @@ static inline void sched_info_depart(struct rq *rq, struct task_struct *t)
 	unsigned long long delta = rq_clock(rq) - t->sched_info.last_arrival;
 
 	rq_sched_info_depart(rq, delta);
-
+	// this is the part we need to deal with for scheduling policy
 	if (task_is_running(t))
 		sched_info_enqueue(rq, t);
 }
