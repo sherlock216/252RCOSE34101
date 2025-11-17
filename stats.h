@@ -263,6 +263,9 @@ static inline void sched_info_depart(struct rq *rq, struct task_struct *t)
 
 	rq_sched_info_depart(rq, delta);
 	// this is the part we need to deal with for scheduling policy
+	
+	printk(KERN_INFO "system ok\n");
+	
 	if (task_is_running(t))
 		sched_info_enqueue(rq, t);
 }
